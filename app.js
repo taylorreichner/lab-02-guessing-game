@@ -2,11 +2,11 @@
 const numberGuessed = document.getElementById('input-box');
 const submitButton = document.getElementById('submit-button');
 const secretGuessesLeft = document.getElementById('secret-guesses-left');
-const wrongAnswer = document.getElementById('wrong-answer');
 const endResult = document.getElementById('end-result');
-const randomNumber = Math.ceil(Math.random() * 20);
+let randomNumber = Math.ceil(Math.random() * 20);
 let guessesLeft = 4;
 const resetButton = document.getElementById('reset-button');
+
 
 
 submitButton.addEventListener('click', () => {
@@ -37,5 +37,13 @@ submitButton.addEventListener('click', () => {
 
     if (guessesLeft == 0, numberGuessed.value == randomNumber) {
         endResult.textContent = winString }
+    
+});
+resetButton.addEventListener('click', () => {
+    //reset state
+    guessesLeft = 4;
+    //reset DOM
+    randomNumber = Math.ceil(Math.random() * 20);
+    
     
 });
